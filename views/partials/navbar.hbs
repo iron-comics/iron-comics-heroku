@@ -1,0 +1,32 @@
+<div class="navbar-cont">
+  <nav class="navbar">
+      <a href="/"><h1>{{title}}</h1></a>
+    <ul class="list-inline">
+      {{#if user }}
+      <li class="list-inline-item">
+        <a href="/lists">My lists</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="/reviews">Reviews</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="/private/user"><div class="navbar-photo" style="height:60px;width:60px;background:url({{user.photo.secure_url}}) no-repeat center / cover"></div></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="/private/edit">Edit Profile</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="/auth/logout">Logout</a>
+      </li>
+      {{else}}
+      <li class="list-inline-item">
+        <a href="/auth/login">Log In</a>
+      </li>
+      <p>or</p>
+      <li class="list-inline-item">
+        <a href="/auth/signup">Sign Up</a>
+      </li>
+      {{/if}}
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,76 @@
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #f7f9f9 url("https://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center/contain; }
+
+header {
+  background-color: #2081C3;
+  height: 76px; }
+  header p {
+    color: #F7F9F9;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: bottom;
+    font-size: 1.4rem;
+    margin-right: .5rem; }
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 0; }
+  header li {
+    font-size: 1.5rem; }
+  header a:hover {
+    text-decoration: none;
+    color: #0A2C42; }
+  header .navbar-cont {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.row {
+  margin: 10px 0; }
+
+a {
+  color: #0A2C42; }
+  a:hover {
+    text-decoration: none;
+    color: #2081C3; }
+
+footer {
+  background-color: #0A2C42;
+  color: #F7F9F9;
+  padding: 5px;
+  font-size: 2rem;
+  min-height: 50px; }
+  footer h2 {
+    padding: 10px 1rem;
+    margin-bottom: 0; }
+  footer a {
+    color: #2081C3; }
+    footer a:hover {
+      color: #3E606F; }
+
+ul {
+  margin-bottom: 0; }
+
+li {
+  vertical-align: middle; }
+
+.container {
+  margin-top: 76px;
+  font-size: 1rem;
+  max-width: 80%;
+  min-height: calc(100vh - 76px - 68px);
+  padding: 40px;
+  text-align: justify;
+  color: #0A2C42;
+  background-color: rgba(247, 249, 249, 0.7); }
+
+.navbar-photo {
+  border-radius: 0.2rem; }
+
+.profile-photo {
+  height: 200px;
+  width: 200px;
+  border-radius: 0.2rem;
+  margin: auto; }
+
+/*# sourceMappingURL=style.css.map */

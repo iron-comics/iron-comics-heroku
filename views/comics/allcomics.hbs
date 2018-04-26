@@ -1,0 +1,19 @@
+
+<form action="/comics/comic?id={{idList}}" method="POST" id="form-container">
+  <label for="name">Name</label>
+  <input id="name" type="text" name="name">
+
+  <br><br>
+
+  <label for="issue_number">Issue Number</label>
+  <input id="issue_number" type="text" name="issue">
+  <br>
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+  <button>Search</button>
+
+</form>

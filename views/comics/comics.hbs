@@ -1,0 +1,6 @@
+{{#each pepe}}
+    <p>{{this.name}}</p>
+    <img src={{this.image.icon_url}} alt="">
+    <a href="/comics/add?id={{this.id}}&name={{../idList}}">Add</a>
+{{/each}}
+<a href="/comics/all?id={{idList}}">Return</a>

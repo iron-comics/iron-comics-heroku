@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div class="profile-photo" style="background:url({{user.photo.secure_url}}) no-repeat center / cover"></div>
+  </div>
+  <div class="col-sm-8">
+    <h2> Hello, {{ user.username }}.</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>My comic lists</h3>
+    <a href="/lists" class="btn" role="button">View all lists</a>
+  </div>
+  <div class="col-sm-6">
+    <a href="/lists/create" class="btn" role="button">Create new list</a>
+  </div>
+</div>
+<div class="row">
+  {{#each list}}
+    <div class="col-sm-6">
+      <h3><a href="/lists/list?id={{this.id}}">{{this.name}}</a></h3>
+      <ul>        
+        {{#each this.id_comic}}
+          <ul>
+            <li>
+              <img src="{{this.img_icon}}" alt="{{this.title}}">
+              <p>{{this.title}}</p>
+            </li>
+          </ul>
+        {{else}}
+          <p>Empty list</p>
+        {{/each}}
+      </ul>
+    </div>
+  {{else}}
+    <h2>No list created</h2>
+  {{/each}}
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <a href="/lists" class="btn" role="button">View all lists</a>
+  </div>
+</div>
+

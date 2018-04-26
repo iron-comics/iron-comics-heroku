@@ -1,0 +1,52 @@
+<!-- views/auth/signup.hbs -->
+<h2>Signup</h2>
+
+<form action="/auth/signup" method="POST" id="form-container" enctype="multipart/form-data">
+
+  <label for="firstname">First Name</label>
+  <input id="firstname" type="text" name="firstname" placeholder="Peter">
+
+  <br><br>
+
+  <label for="lastname">Last Name</label>
+  <input id="lastname" type="text" name="lastname" placeholder="Parker">
+
+  <br><br>
+
+  <label for="birthday">Birth Date</label>
+  <input id="birthday" type="date" name="birthday" placeholder="10/08/1962">
+
+  <br><br>
+
+  <label for="email">Email Address</label>
+  <input id="email" type="text" name="email" placeholder="spidey@web.com">
+
+  <br><br>
+
+  <label for="username">Nickname</label>
+  <input id="username" type="text" name="username" placeholder="SpiderMan">
+
+  <br><br>
+
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" placeholder="Your password">
+
+  <br><br>
+
+  <label>Photo</label>
+  <input type="file" name="photo">
+
+  <br>
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+  <button>Create account</button>
+
+  <p class="account-message">
+    Do you already have an account?
+    <a href="/auth/login">Login</a>
+  </p>
+</form>

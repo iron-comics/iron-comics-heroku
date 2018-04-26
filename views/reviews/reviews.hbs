@@ -1,0 +1,11 @@
+<a href="/reviews/create">Create review</a>
+<a href="/reviews/myreviews">My reviews</a>
+{{#if review}}
+    {{#each review}}
+        <p>{{this.author}}</p>
+        <p>{{this.rating}}</p>
+        <p>{{this.id_comic.title}}</p>
+        <img src="{{this.id_comic.img_icon}}" alt="">
+        <p>{{this.reviewtext}}</p>
+    {{/each}}
+{{/if}}

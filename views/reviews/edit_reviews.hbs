@@ -1,0 +1,20 @@
+<form action="/reviews/edit?id={{review.id}}" method="post">
+<input type="text" name="text" value={{review.reviewtext}}>
+<select name="name">
+  <option value="{{review.id_comic.id}}">{{review.id_comic.title}}</option>
+    {{#each listTitle}}
+    <option value="{{this.id}}">{{this.title}}</option>
+   {{/each}}
+</select>
+<label for="">Valoración</label>
+<input type="range" name="value" value={{review.rating}}>
+<button>Edit</button>
+</form>
+
+{{!-- <p>{{this.author}}</p>
+        <p>{{this.rating}}</p>
+        <p>{{this.id_comic.title}}</p>
+        <img src="{{this.id_comic.img_icon}}" alt="">
+        <p>{{this.reviewtext}}</p>
+        <a href="/reviews/delete?id={{this.id}}">Delete</a>
+        <a href="/reviews/edit?id={{this.id}}">Edit</a> --}}

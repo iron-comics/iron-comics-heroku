@@ -1,0 +1,19 @@
+{{#if list}}
+
+{{list.name}}
+<a href="/comics/all?id={{list.id}}" class="btn" role="button">Add Comics</a>
+<a href="/comics/delete/list?idList={{list.id}}" onclick="return confirm('Delete {{list.name}} from BD?')">Delete List</a>
+<ul>
+{{#each list.id_comic}}
+  <li><a href="/comics/comic_info?id={{this.id}}">{{this.title}}</a></li>
+  <img src="{{this.img_icon}}" alt="">
+  <a href="/comics/delete/comic?idList={{../list.id}}&idComic={{this.id}}" onclick="return confirm('Delete {{this.title}} from BD?')">Delete Comic</a>
+  {{else}}
+  <p>Empty list</p>
+{{/each}} 
+</ul>
+{{else}}
+<h2>No list created</h2>
+{{/if}}
+
+<a href="/lists" class="btn" role="button">Back to my lists</a>

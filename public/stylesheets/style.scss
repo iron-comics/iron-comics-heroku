@@ -1,0 +1,107 @@
+$white: #FCFFF5;
+$lighter: #D1DBBD;
+$light: #91AA9D;
+$medium: #3E606F;
+$dark: #193441;
+
+$smoke: #d1d1d1;
+$grey: #4b4b4b;
+$black: #404040;
+$darker: #212121;
+
+@import "nombre";
+
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #f7f9f9 url("https://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center / contain;
+}
+
+header {
+  background-color: #2081C3;
+  height: 76px;
+  p {
+    color: #F7F9F9;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: bottom;
+    font-size: 1.4rem;
+    margin-right: .5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  li {
+    font-size: 1.5rem;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: #0A2C42;
+  }
+  .navbar-cont {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+  }
+}
+
+.row {
+  margin: 10px 0;
+}
+
+a {
+  color: #0A2C42;
+  &:hover {
+    text-decoration: none;
+    color: #2081C3;
+  }
+}
+
+footer {
+  background-color: #0A2C42;
+  color: #F7F9F9;
+  padding: 5px;
+  font-size: 2rem;
+  min-height: 50px;
+  h2 {
+    padding: 10px 1rem;
+    margin-bottom: 0;
+  }
+  a{
+    color: #2081C3;
+    &:hover {
+      color: #3E606F;
+    }
+  }
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+li {
+  vertical-align: middle;
+}
+
+.container {
+  margin-top: 76px;
+  font-size: 1rem;
+  max-width: 80%;
+  min-height: calc(100vh - 76px - 68px);
+  padding: 40px;
+  text-align: justify;
+  color: #0A2C42;
+  background-color: rgba($color: #F7F9F9, $alpha: 0.7)
+}
+
+.navbar-photo {
+  border-radius: 0.2rem;
+}
+
+.profile-photo{
+  height: 200px;
+  width: 200px;
+  border-radius: 0.2rem;
+  margin: auto;
+}

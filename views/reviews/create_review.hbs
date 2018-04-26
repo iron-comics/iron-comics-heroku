@@ -1,0 +1,27 @@
+<form action="/reviews/create" method="post">
+<label for="">Text</label>
+<input type="text" name="text" id="">
+<label for="">Comic</label>
+<select name="name">
+  <option value="" selected="selected">- selected -</option>
+    {{#each listTitle}}
+  <option value="{{this.id}}">{{this.title}}</option>
+  ¡ {{/each}}
+</select>
+<label for="">Valoración</label>
+<input type="range" name="value" value="">
+{{!-- <datalist id="tickmarks">
+  <option value="0" label="0%">
+  <option value="10">
+  <option value="20">
+  <option value="30">
+  <option value="40">
+  <option value="50" label="50%">
+  <option value="60">
+  <option value="70">
+  <option value="80">
+  <option value="90">
+  <option value="100" label="100%">
+</datalist> --}}
+<button>GO!</button>
+</form>
