@@ -101,4 +101,7 @@ app.use("/comics", ensureLoggedIn("/auth/login"), comicsRoutes);
 const reviewRoutes = require("./routes/reviews");
 app.use("/reviews", ensureLoggedIn("/auth/login"), reviewRoutes);
 
+const commentRoutes = require("./routes/comments");
+app.use("/comments", ensureLoggedIn("/auth/login"), commentRoutes);
+
 module.exports = app;
