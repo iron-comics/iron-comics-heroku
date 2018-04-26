@@ -1,0 +1,21 @@
+<h2>{{review.id_comic.title}}</h2>
+
+<p>{{review.author}}</p>
+<img src="{{review.id_comic.img_icon}}" alt="">
+
+<p>{{review.reviewtext}}</p>
+
+{{#if commets}}
+    {{#each commets}}
+        <div>
+            <p>Name: {{this.id_user.username}}</p>
+            <p>{{this.text}}</p>
+        </div>
+    {{/each}}
+{{/if}}
+
+<form action="/reviews/review?id={{review.id}}" method="post">
+<label for="">Text</label>
+<input type="text" name="text">
+<button>Comment</button>
+</form>

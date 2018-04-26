@@ -1,0 +1,14 @@
+
+{{#if comments}}
+    {{#each comments}}
+        <p>{{this.id_review.author}} --> Nota para Lolo: Este es el autor</p>
+        <p>{{this.id_review.reviewtext}} --> Nota para Lolo: Este es el contenido de la review</p>
+        <br>
+        <p>{{this.text}} --> Nota para Lolo: Este es el comentario</p>
+        <a href="/comments/edit?id={{this.id}}">Edit</a>
+        <a href="/comments/remove?id={{this.id}}">Delete</a>
+        <br>
+    {{/each}}
+{{else}}
+    <p>NO COMMENTS</p>
+{{/if}}

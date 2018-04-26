@@ -1,0 +1,10 @@
+
+<p>{{comic.title}}</p>
+
+<form action="/comments/edit?id={{comment.id}}&id_review={{comment.id_review.id}}" method="post">
+
+    <label for="">text</label>
+    <input type="text" name="text" value={{comment.text}}>
+    <button>Edit</button>
+</form>
+<a href="/comments">Return</a>

@@ -4,11 +4,37 @@ const Comic = require("../models/Comic");
 const User = require("../models/User");
 const List = require("../models/List");
 const Review = require("../models/Review");
+const Comment = require("../models/Comment");
 
 reviewRoutes.get("/", (req, res) => {
   Review.find()
     .populate("id_comic", "title img_icon")
     .then(review => res.render("reviews/reviews", { review }));
+});
+
+reviewRoutes.get("/review", (req, res) => {
+  const id = req.query.id;
+  Review.findById(id)
+    .populate("id_comic", "title img_icon")
+    .then(review => {
+      Comment.find({ id_review: id })
+        .populate("id_review")
+        .populate("id_user")
+        .then(commets => {
+          console.log(review);
+          res.render("reviews/comments", { review, commets });
+        });
+    });
+});
+
+reviewRoutes.post("/review", (req, res) => {
+  const id_user = req.user.id;
+  const text = req.body.text;
+  const id_review = req.query.id;
+  const comment = new Comment({ id_user, text, id_review });
+  comment.save().then(() => {
+    res.redirect(`/reviews/review?id=${id_review}`);
+  });
 });
 
 reviewRoutes.get("/myreviews", (req, res) => {
@@ -56,11 +82,18 @@ reviewRoutes.post("/edit", (req, res) => {
   );
 });
 
-reviewRoutes.get("/delete", (req, res) =>{
-    const id_review = req.query.id;
-    Review.findByIdAndRemove(id_review)
-    .then(() => res.redirect("/reviews/myreviews"))
-})
+reviewRoutes.get("/delete", (req, res) => {
+  const id_review = req.query.id;
+
+  Comment.find({ id_review }).then(comments => {
+    for (let i = 0; i < comments.length; i++) {
+      comments[i].remove({});
+    }
+    Review.findByIdAndRemove(id_review).then(() => {
+      res.redirect("/reviews/myreviews");
+    });
+  });
+});
 
 reviewRoutes.get("/create", (req, res) => {
   List.find({ id_user: req.user })
