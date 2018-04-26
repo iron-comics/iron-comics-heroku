@@ -1,22 +1,27 @@
 <div class="navbar-cont">
-  <nav class="navbar">
-      <a href="/"><h1>{{title}}</h1></a>
-    <ul class="list-inline">
+  <nav class="navbar navbar-expand-sm">
+    <div>
+      <a class="navbar-brand" href="/">
+        <img src="http://res.cloudinary.com/jmbarcelo/image/upload/v1524758502/logo2.png" alt="{{title}}">
+      </a>
+    </div>
+    <ul class="list-inline right">
       {{#if user }}
       <li class="list-inline-item">
         <a href="/lists">My lists</a>
       </li>
       <li class="list-inline-item">
-        <a href="/reviews">Reviews</a>
+        <a href="/reviews">My reviews</a>
       </li>
       <li class="list-inline-item">
         <a href="/private/user"><div class="navbar-photo" style="height:60px;width:60px;background:url({{user.photo.secure_url}}) no-repeat center / cover"></div></a>
       </li>
-      <li class="list-inline-item">
-        <a href="/private/edit">Edit Profile</a>
-      </li>
-      <li class="list-inline-item">
-        <a href="/auth/logout">Logout</a>
+      <li class="list-inline-item dropdown">
+        <a href="#" id="dropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Baja</a>
+        <div class="dropdown-menu" aria-labelledby="dropDown">
+          <a class="dropdown-item" href="/private/edit">Edit Profile</a>
+          <a class="dropdown-item" href="/auth/logout">Logout</a>
+        </div>
       </li>
       {{else}}
       <li class="list-inline-item">

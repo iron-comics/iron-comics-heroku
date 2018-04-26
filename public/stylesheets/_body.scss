@@ -1,0 +1,29 @@
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #f7f9f9 url("https://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center / contain;
+}
+
+.row {
+  margin: 10px 0;
+}
+
+a {
+  color: #0A2C42;
+  &:hover {
+    text-decoration: none;
+    color: #2081C3;
+  }
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+li {
+  vertical-align: middle;
+}
+
+img {
+  max-width: 100%;
+  max-width: 100%;
+}

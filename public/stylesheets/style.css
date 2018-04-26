@@ -2,6 +2,25 @@ body {
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: #f7f9f9 url("https://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center/contain; }
 
+.row {
+  margin: 10px 0; }
+
+a {
+  color: #0A2C42; }
+  a:hover {
+    text-decoration: none;
+    color: #2081C3; }
+
+ul {
+  margin-bottom: 0; }
+
+li {
+  vertical-align: middle; }
+
+img {
+  max-width: 100%;
+  max-width: 100%; }
+
 header {
   background-color: #2081C3;
   height: 76px; }
@@ -24,15 +43,30 @@ header {
     position: relative;
     top: 50%;
     transform: translateY(-50%); }
+  header .navbar-photo {
+    border-radius: 0.2rem; }
+  header .right {
+    margin-left: auto;
+    margin-right: 20px; }
 
-.row {
-  margin: 10px 0; }
+.container {
+  margin-top: 76px;
+  font-size: 1rem;
+  max-width: 80%;
+  min-height: calc(100vh - 76px - 68px);
+  padding: 40px;
+  text-align: justify;
+  color: #0A2C42;
+  background-color: rgba(247, 249, 249, 0.7); }
 
-a {
-  color: #0A2C42; }
-  a:hover {
-    text-decoration: none;
-    color: #2081C3; }
+.profile-photo {
+  height: 200px;
+  width: 200px;
+  border-radius: 0.2rem;
+  margin: auto; }
+
+.index {
+  text-align: center; }
 
 footer {
   background-color: #0A2C42;
@@ -47,30 +81,5 @@ footer {
     color: #2081C3; }
     footer a:hover {
       color: #3E606F; }
-
-ul {
-  margin-bottom: 0; }
-
-li {
-  vertical-align: middle; }
-
-.container {
-  margin-top: 76px;
-  font-size: 1rem;
-  max-width: 80%;
-  min-height: calc(100vh - 76px - 68px);
-  padding: 40px;
-  text-align: justify;
-  color: #0A2C42;
-  background-color: rgba(247, 249, 249, 0.7); }
-
-.navbar-photo {
-  border-radius: 0.2rem; }
-
-.profile-photo {
-  height: 200px;
-  width: 200px;
-  border-radius: 0.2rem;
-  margin: auto; }
 
 /*# sourceMappingURL=style.css.map */
