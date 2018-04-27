@@ -14,12 +14,15 @@
 {{#if reviews}} {{#each reviews}}
 <div class="comments">
 <div class="row my-reviews">
-    <div class="col-sm-3">
+    <div class="col-sm-2">
         <img src="{{this.id_comic.img_icon}}" alt="">
     </div>
-    <div class="col-sm-9 left">
-        <h3>{{this.id_comic.title}} {{this.rating}}</h3>
+    <div class="col-sm-6 left">
+        <h3>{{this.id_comic.title}}</h3>
         <p>{{this.reviewtext}}</p>
+    </div>
+    <div class="col-sm-4">
+        <h4>Rating: {{this.rating}}%</h4>
     </div>
 </div>
 <div class="row reviews">

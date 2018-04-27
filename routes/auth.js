@@ -36,7 +36,14 @@ authRoutes.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const aboutme = req.body.aboutme;
-  const { url, secure_url } = req.file;
+  const photo = {};
+  if(req.file){
+    photo.url = req.file.url;
+    photo.secure_url = req.file.secure_url;
+  }else {
+    res.render("auth/signup", { message: "Indicate your image" });
+    return;
+  }
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate nickname and password" });
     return;
@@ -59,10 +66,7 @@ authRoutes.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
       username,
       password: hashPass,
       aboutme,
-      photo: {
-        url,
-        secure_url
-      }
+      photo
     });
 
     newUser.save(err => {

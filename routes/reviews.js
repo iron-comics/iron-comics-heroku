@@ -45,9 +45,14 @@ reviewRoutes.get("/myreviews", (req, res) => {
 
 reviewRoutes.get("/edit", (req, res) => {
   const idReview = req.query.id;
+  const id_user = req.user.id;
   Review.findOne({ _id: idReview })
     .populate("id_comic", "title")
-    .then(review =>
+    .then(review => {
+      if (req.user.id != review.id_user) {
+        res.redirect("/reviews/myreviews");
+        return;
+      }
       List.find({ id_user: req.user })
         .populate("id_comic", "title")
         .then(list => {
@@ -59,8 +64,9 @@ reviewRoutes.get("/edit", (req, res) => {
             }
           }
           res.render("reviews/edit_reviews", { review, listTitle });
-        })
-    );
+        });
+    })
+    .catch(() => res.redirect("/reviews"));
 });
 
 reviewRoutes.post("/edit", (req, res) => {
@@ -77,14 +83,31 @@ reviewRoutes.post("/edit", (req, res) => {
     author: req.user.username,
     id_user: req.user.id
   };
-  Review.findByIdAndUpdate(id_review, updates).then(() =>
-    res.redirect("/reviews/myreviews")
-  );
+  Review.findById(id_review)
+  .then(review => {
+    if(review.id_user != req.user.id){
+      res.redirect("/reviews")
+      return
+    }
+  })
+  .catch(() => res.redirect("/reviews"))
+  Review.findByIdAndUpdate(id_review, updates)
+  .then(review => {    
+    res.redirect("/reviews/myreviews");
+  })
 });
 
 reviewRoutes.get("/delete", (req, res) => {
   const id_review = req.query.id;
-
+  Review.findById(id_review).then(review => {
+    if (req.user.id != review.id_user) {
+      res.redirect("/reviews");
+      return;
+    }
+  }).catch(() => {
+    res.redirect("/reviews");
+      return;
+  })
   Comment.find({ id_review }).then(comments => {
     for (let i = 0; i < comments.length; i++) {
       comments[i].remove({});
