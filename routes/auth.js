@@ -35,6 +35,7 @@ authRoutes.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
   const email = req.body.email;
   const username = req.body.username;
   const password = req.body.password;
+  const aboutme = req.body.aboutme;
   const { url, secure_url } = req.file;
   console.log(req.file);
   if (username === "" || password === "") {
@@ -58,6 +59,7 @@ authRoutes.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
       email,
       username,
       password: hashPass,
+      aboutme,
       photo: {
         url,
         secure_url

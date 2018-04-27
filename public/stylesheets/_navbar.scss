@@ -1,25 +1,51 @@
 header {
-  background-color: #2081C3;
-  height: 76px;
-  p {
-    color: #F7F9F9;
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: bottom;
-    font-size: 1.4rem;
-    margin-right: .5rem;
+  background-color: #F7F9F9;
+  height: 120px;
+  margin-top: 100px;
+  .btn {
+    font-size: 1.3rem;
   }
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 0;
+  .navbar-brand {
+    margin-right: 0;
+  }
+  .black-line {
+    margin: -100px 0 0 0;
+    height: 100px;
+    background: $darker;
+  }
+  .blue-line {
+    margin: -20px 0 0 0;
+    height: 20px;
+    background: #2081C3;
+  }
+  p {
+    color: #2081C3;
+    display: inline-block;
+    margin: 0;
+    vertical-align: bottom;
+    font-size: 1.3rem;
   }
   li {
     font-size: 1.5rem;
   }
+
+  .col-sm-1 {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .col-sm-5 {
+    padding: 0 10px;
+  }
   
   a:hover {
     text-decoration: none;
-    color: #0A2C42;
+    color: $darker;
+  }
+  .navbar {
+    padding: 0 20px;
   }
   .navbar-cont {
     position: relative;
@@ -33,6 +59,8 @@ header {
   .right {
     margin-left:auto;
     margin-right:20px;
+    max-width: 50%;
+    text-align: center;
   }
 }
 

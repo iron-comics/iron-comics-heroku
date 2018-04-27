@@ -1,6 +1,6 @@
 body {
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #f7f9f9 url("https://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center / contain;
+  font: 16px "Roboto", Helvetica, Arial, sans-serif;
+  background: $darker url("http://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center / contain;
 }
 
 .row {
@@ -8,7 +8,7 @@ body {
 }
 
 a {
-  color: #0A2C42;
+  color: $darker;
   &:hover {
     text-decoration: none;
     color: #2081C3;
@@ -26,4 +26,29 @@ li {
 img {
   max-width: 100%;
   max-width: 100%;
+}
+
+.btn-light {
+  background: #2081C3;
+  border-color: #2081C3;
+  &:hover {
+    background: #0A2C42;
+    color: #2081C3;
+  }
+}
+.btn-dark {
+  color: #2081C3;
+  background: #0A2C42;
+  &:hover {
+    background: #2081C3;
+    color: #0A2C42;
+  }
+}
+.btn-white {
+  color: #F7F9F9;
+  background: #2081C3;
+  &:hover {
+    background: #F7F9F9;
+    color: #2081C3;
+  }
 }

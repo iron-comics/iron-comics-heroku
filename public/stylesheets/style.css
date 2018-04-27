@@ -1,12 +1,13 @@
+@charset "UTF-8";
 body {
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #f7f9f9 url("https://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center/contain; }
+  font: 16px "Roboto", Helvetica, Arial, sans-serif;
+  background: #1c1c1c url("http://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524735641/Iron-Comics/comic-pattern.jpg") center/contain; }
 
 .row {
   margin: 10px 0; }
 
 a {
-  color: #0A2C42; }
+  color: #1c1c1c; }
   a:hover {
     text-decoration: none;
     color: #2081C3; }
@@ -21,24 +22,63 @@ img {
   max-width: 100%;
   max-width: 100%; }
 
+.btn-light {
+  background: #2081C3;
+  border-color: #2081C3; }
+  .btn-light:hover {
+    background: #0A2C42;
+    color: #2081C3; }
+
+.btn-dark {
+  color: #2081C3;
+  background: #0A2C42; }
+  .btn-dark:hover {
+    background: #2081C3;
+    color: #0A2C42; }
+
+.btn-white {
+  color: #F7F9F9;
+  background: #2081C3; }
+  .btn-white:hover {
+    background: #F7F9F9;
+    color: #2081C3; }
+
 header {
-  background-color: #2081C3;
-  height: 76px; }
+  background-color: #F7F9F9;
+  height: 120px;
+  margin-top: 100px; }
+  header .btn {
+    font-size: 1.3rem; }
+  header .navbar-brand {
+    margin-right: 0; }
+  header .black-line {
+    margin: -100px 0 0 0;
+    height: 100px;
+    background: #1c1c1c; }
+  header .blue-line {
+    margin: -20px 0 0 0;
+    height: 20px;
+    background: #2081C3; }
   header p {
-    color: #F7F9F9;
+    color: #2081C3;
     display: inline-block;
-    margin-bottom: 0;
+    margin: 0;
     vertical-align: bottom;
-    font-size: 1.4rem;
-    margin-right: .5rem; }
-  header h1 {
-    font-size: 2rem;
-    margin-bottom: 0; }
+    font-size: 1.3rem; }
   header li {
     font-size: 1.5rem; }
+  header .col-sm-1 {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  header .col-sm-5 {
+    padding: 0 10px; }
   header a:hover {
     text-decoration: none;
-    color: #0A2C42; }
+    color: #1c1c1c; }
+  header .navbar {
+    padding: 0 20px; }
   header .navbar-cont {
     position: relative;
     top: 50%;
@@ -47,17 +87,24 @@ header {
     border-radius: 0.2rem; }
   header .right {
     margin-left: auto;
-    margin-right: 20px; }
+    margin-right: 20px;
+    max-width: 50%;
+    text-align: center; }
 
 .container {
-  margin-top: 76px;
+  margin-top: 196px;
   font-size: 1rem;
   max-width: 80%;
-  min-height: calc(100vh - 76px - 68px);
-  padding: 40px;
+  min-height: calc(100vh - 196px - 100px);
+  padding: 24px 20px 4px 20px;
   text-align: justify;
-  color: #0A2C42;
-  background-color: rgba(247, 249, 249, 0.7); }
+  color: #1c1c1c;
+  background-color: rgba(247, 249, 249, 0.7);
+  display: flex; }
+
+h1 {
+  font-size: 2.7rem;
+  margin: 0 auto; }
 
 .profile-photo {
   height: 200px;
@@ -66,20 +113,83 @@ header {
   margin: auto; }
 
 .index {
-  text-align: center; }
+  text-align: center;
+  margin: auto 0;
+  width: 100%; }
+
+.wellcome {
+  display: flex;
+  align-items: center; }
+
+.signup, .login {
+  text-align: center;
+  width: 100%;
+  font-size: 1.5rem; }
+  .signup .underline, .login .underline {
+    margin: auto;
+    border-bottom: #2081C3 1px solid;
+    width: 50%;
+    display: flex;
+    justify-content: center; }
+    .signup .underline h2, .login .underline h2 {
+      font-size: 2.5rem; }
+  .signup .col-sm-6, .login .col-sm-6 {
+    padding: 5px 0; }
+  .signup .col-md-8, .login .col-md-8 {
+    margin-bottom: 10px; }
+  .signup label, .signup p , .login label, .login p  {
+    margin-bottom: 0; }
+  .signup label, .login label {
+    display: inline-flex;
+    vertical-align: sub;
+    text-transform: uppercase; }
+  .signup input, .signup textarea, .login input, .login textarea {
+    -webkit-appearance: textfield;
+    width: 90%; }
+  .signup textarea, .login textarea {
+    border: transparent; }
+  .signup .btn, .login .btn {
+    font-size: 1.5rem;
+    margin: 10px; }
+  .signup .photo, .login .photo {
+    display: flex;
+    justify-content: center; }
+  .signup .login-adv, .signup .signup-adv, .login .login-adv, .login .signup-adv {
+    color: #F7F9F9;
+    background: rgba(10, 44, 66, 0.9);
+    border-radius: .25rem; }
+    .signup .login-adv p, .signup .signup-adv p, .login .login-adv p, .login .signup-adv p {
+      margin-bottom: 0; }
+  .signup .center, .login .center {
+    margin: auto; }
+  .signup .alert-danger, .login .alert-danger {
+    color: #f5c6cb;
+    background-color: #721c24;
+    border-color: #f5c6cb;
+    margin-top: 10px; }
 
 footer {
-  background-color: #0A2C42;
+  background: #0A2C42 url("http://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524780225/collage-bn.jpg") center/contain;
   color: #F7F9F9;
-  padding: 5px;
   font-size: 2rem;
-  min-height: 50px; }
+  min-height: 100px;
+  display: grid; }
   footer h2 {
     padding: 10px 1rem;
     margin-bottom: 0; }
   footer a {
-    color: #2081C3; }
+    color: #fde05a; }
     footer a:hover {
-      color: #3E606F; }
+      color: #499f31; }
+  footer .blue-line {
+    background: #F7F9F9;
+    margin: 0; }
+  footer .white-line {
+    height: 5px;
+    background: #2081C3;
+    margin: 0; }
+  @media (max-width: 540px) {
+    footer {
+      text-align: center; } }
 
 /*# sourceMappingURL=style.css.map */

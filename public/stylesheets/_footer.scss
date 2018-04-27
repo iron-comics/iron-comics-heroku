@@ -1,17 +1,29 @@
 footer {
-  background-color: #0A2C42;
+  background: #0A2C42 url("http://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524780225/collage-bn.jpg") center / contain;
   color: #F7F9F9;
-  padding: 5px;
   font-size: 2rem;
-  min-height: 50px;
+  min-height: 100px;
+  display: grid;
   h2 {
     padding: 10px 1rem;
     margin-bottom: 0;
   }
   a{
-    color: #2081C3;
+    color: #fde05a;
     &:hover {
-      color: #3E606F;
+      color: #499f31;
     }
+  }
+  .blue-line {
+    background: #F7F9F9;
+    margin: 0;
+  }
+  .white-line {
+    height: 5px;
+    background: #2081C3;
+    margin: 0;
+  }
+  @media (max-width: 540px){
+    text-align: center;
   }
 }

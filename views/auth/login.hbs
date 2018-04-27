@@ -1,25 +1,37 @@
+<div class="login">
+  <div class="row">
+    <div class="underline">
+      <h2>Log In</h2>
+    </div>
+  </div>
 
-<h2>Log In</h2>
+  <form class="row" action="/auth/login" method="POST" id="form-container">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="username">Nickname:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <input id="username" type="text" name="username" placeholder="Spiderman">
+    </div>
 
-<form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Nickname</label>
-  <input id="username" type="text" name="username" placeholder="Hulk">
-
-  <br><br>
-
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br><br>
-
-  <button>Log In</button>
-
-  <p class="account-message">
-    Don't have an account yet?
-    <a class="btn" href="/auth/signup" role="button">Sign Up</a>
-  </p>
-</form>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="password">Password:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <input id="password" type="password" name="password" placeholder="**********">
+    </div>
+    {{#if message }}
+    <div class="col-sm-12">
+      <div class="alert alert-danger error-message" role="alert">{{message}}</div>
+    </div>
+    {{/if}}
+    <div class="col-sm-6 center">
+      <button type="submit" class="btn btn-dark">Log In</button>
+    </div>
+    <div class="col-sm-6 signup-adv">
+      <p class="account-message">
+        Don't have an account yet?
+        <a class="btn btn-white" href="/auth/signup">Sign Up</a>
+      </p>
+    </div>
+  </form>
+</div>

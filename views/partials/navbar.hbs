@@ -1,8 +1,10 @@
+<div class="row black-line"></div>
+<div class="row blue-line"></div>
 <div class="navbar-cont">
   <nav class="navbar navbar-expand-sm">
     <div>
       <a class="navbar-brand" href="/">
-        <img src="http://res.cloudinary.com/jmbarcelo/image/upload/v1524758502/logo2.png" alt="{{title}}">
+        <div class="navbar-photo" style="height:110px;width:110px;background:url(http://res.cloudinary.com/jmbarcelo/image/upload/v1524758502/logo2.png) no-repeat center / cover"></div>
       </a>
     </div>
     <ul class="list-inline right">
@@ -17,7 +19,9 @@
         <a href="/comments">Comments</a>
       </li>
       <li class="list-inline-item">
-        <a href="/private/user"><div class="navbar-photo" style="height:60px;width:60px;background:url({{user.photo.secure_url}}) no-repeat center / cover"></div></a>
+        <a href="/private/user">
+          <div class="navbar-photo" style="height:60px;width:60px;background:url({{user.photo.secure_url}}) no-repeat center / cover"></div>
+        </a>
       </li>
       <li class="list-inline-item dropdown">
         <a href="#" id="dropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Baja</a>
@@ -27,13 +31,22 @@
         </div>
       </li>
       {{else}}
-      <li class="list-inline-item">
-        <a href="/auth/login">Log In</a>
-      </li>
-      <p>or</p>
-      <li class="list-inline-item">
-        <a href="/auth/signup">Sign Up</a>
-      </li>
+      <div class="row log-sign">
+        <div class="col-sm-5">
+          <li class="list-inline-item">
+            <a class="btn btn-dark" href="/auth/login">Log In</a>
+          </li>
+        </div>
+        <div class="col-sm-1">
+          <p>or</p>
+        </div>
+        <div class="col-sm-5">
+          <li class="list-inline-item">
+            <a class="btn btn-light" href="/auth/signup">Sign Up</a>
+          </li>
+        </div>
+      </div>
+
       {{/if}}
     </ul>
   </nav>
