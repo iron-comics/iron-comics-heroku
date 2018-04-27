@@ -1,19 +1,38 @@
 {{#if list}}
-
-{{list.name}}
-<a href="/comics/all?id={{list.id}}" class="btn" role="button">Add Comics</a>
-<a href="/comics/delete/list?idList={{list.id}}" onclick="return confirm('Delete {{list.name}} from BD?')">Delete List</a>
-<ul>
+<div class="row comic-list underline">
+  <div class="col-sm-12">
+    <h2>{{list.name}}</h2>
+  </div>
+</div>
+<div class="row comic-list">
+  <div class="col-sm-6">
+    <a class="btn btn-dark" href="/comics/all?id={{list.id}}" class="btn" role="button">Add Comics</a>
+  </div>
+  <div class="col-sm-6">
+    <a class="btn btn-red" href="/comics/delete/list?idList={{list.id}}" onclick="return confirm('Delete {{list.name}} from BD?')">Delete List</a>
+  </div>
+</div>
 {{#each list.id_comic}}
-  <li><a href="/comics/comic_info?id={{this.id}}">{{this.title}}</a></li>
-  <img src="{{this.img_icon}}" alt="">
-  <a href="/comics/delete/comic?idList={{../list.id}}&idComic={{this.id}}" onclick="return confirm('Delete {{this.title}} from BD?')">Delete Comic</a>
-  {{else}}
-  <p>Empty list</p>
-{{/each}} 
-</ul>
+<div class="row comic-lists">
+  <div class="col-sm-3">
+    <img src={{this.img_icon}} alt="{{this.name}} icon">
+  </div>
+  <div class="col-sm-6 left">
+    <a href="/comics/comic_info?id={{this.id}}">
+      <h4>{{this.title}}</h4>
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a class="btn btn-red" href="/comics/delete/comic?idList={{../list.id}}&idComic={{this.id}}" onclick="return confirm('Delete {{this.title}} from BD?')">Delete Comic</a>
+  </div>
+</div>
 {{else}}
-<h2>No list created</h2>
+<h4 class="no-object">Empty list</h4>
+{{/each}} {{else}}
+<h4 class="no-object">No lists created</h4>
 {{/if}}
-
-<a href="/lists" class="btn" role="button">Back to my lists</a>
+<div class="row">
+  <div class="col-sm-12 comic-list">
+    <a href="/lists" class="btn btn-light" role="button">Back to my lists</a>
+  </div>
+</div>

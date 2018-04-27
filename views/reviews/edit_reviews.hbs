@@ -1,20 +1,38 @@
-<form action="/reviews/edit?id={{review.id}}" method="post">
-<input type="text" name="text" value={{review.reviewtext}}>
-<select name="name">
-  <option value="{{review.id_comic.id}}">{{review.id_comic.title}}</option>
-    {{#each listTitle}}
-    <option value="{{this.id}}">{{this.title}}</option>
-   {{/each}}
-</select>
-<label for="">Valoración</label>
-<input type="range" name="value" value={{review.rating}}>
-<button>Edit</button>
-</form>
-
-{{!-- <p>{{this.author}}</p>
-        <p>{{this.rating}}</p>
-        <p>{{this.id_comic.title}}</p>
-        <img src="{{this.id_comic.img_icon}}" alt="">
-        <p>{{this.reviewtext}}</p>
-        <a href="/reviews/delete?id={{this.id}}">Delete</a>
-        <a href="/reviews/edit?id={{this.id}}">Edit</a> --}}
+<div class="create-review">
+  <div class="row">
+    <div class="col-sm-12 underline">
+      <h2>Edit review</h2>
+    </div>
+  </div>
+  <form class="row" action="/reviews/edit?id={{review.id}}" method="post">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="text">Review:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <textarea name="text" cols="40" rows="5">{{review.reviewtext}}</textarea>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="">Comic:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <select name="name">
+        <option value="{{review.id_comic.id}}" selected="selected">{{review.id_comic.title}}</option>
+        {{#each listTitle}}
+        <option value="{{this.id}}">{{this.title}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="">Rating:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <input type="range" name="value" min="0" max="100" value="{{review.rating}}">
+    </div>
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-dark">Edit</button>
+    </div>
+    <div class="col-sm-6">
+        <a href="/reviews/myreviews" class="btn btn-light" role="button">Back to my reviews</a>
+    </div>
+  </form>
+</div>

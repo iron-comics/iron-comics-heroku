@@ -12,6 +12,10 @@ a {
     text-decoration: none;
     color: #2081C3; }
 
+p {
+  text-align: justify;
+  margin: 10px auto; }
+
 ul {
   margin-bottom: 0; }
 
@@ -24,17 +28,19 @@ img {
 
 .btn-light {
   background: #2081C3;
-  border-color: #2081C3; }
+  border-color: #F7F9F9; }
   .btn-light:hover {
     background: #0A2C42;
     color: #2081C3; }
 
 .btn-dark {
   color: #2081C3;
-  background: #0A2C42; }
+  background: #0A2C42;
+  border: #F7F9F9 1px solid; }
   .btn-dark:hover {
     background: #2081C3;
-    color: #0A2C42; }
+    color: #0A2C42;
+    border: #F7F9F9 1px solid; }
 
 .btn-white {
   color: #F7F9F9;
@@ -42,6 +48,17 @@ img {
   .btn-white:hover {
     background: #F7F9F9;
     color: #2081C3; }
+
+.btn-red {
+  color: #f5c6cb;
+  background: #721c24; }
+  .btn-red:hover {
+    background: #f5c6cb;
+    color: #721c24; }
+
+.btn {
+  font-size: 1.5rem;
+  margin: 10px; }
 
 header {
   background-color: #F7F9F9;
@@ -88,8 +105,54 @@ header {
   header .right {
     margin-left: auto;
     margin-right: 20px;
-    max-width: 50%;
     text-align: center; }
+  header .login-signin {
+    max-width: 50%; }
+  header .fa-bars {
+    font-size: 2.1rem; }
+
+.dropdown-menu {
+  left: -100%; }
+
+@media screen and (max-width: 767px) {
+  .barr {
+    display: none; }
+  .navbar-toggler {
+    position: fixed;
+    top: 28px;
+    right: -15px;
+    font-size: 3em;
+    color: black;
+    opacity: .5;
+    cursor: pointer;
+    text-shadow: 0 0 10px white, 0 0 10px white, 0 0 10px white;
+    z-index: 900; }
+  .navbar-collapse {
+    height: 100vh;
+    max-width: 80%;
+    background: #eee;
+    padding: 20px 20px;
+    border-right: 1px solid #999;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    transform: translate(-100%);
+    transition: all .8s;
+    z-index: 9999; }
+  .navbar-collapse a {
+    color: #555;
+    padding: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1em;
+    margin: 0;
+    display: block;
+    text-align: center;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.05); }
+  .navbar-collapse li:last-of-type a {
+    border: none; }
+  .show {
+    transform: translate(0); } }
 
 .container {
   margin-top: 196px;
@@ -99,12 +162,37 @@ header {
   padding: 24px 20px 4px 20px;
   text-align: justify;
   color: #1c1c1c;
-  background-color: rgba(247, 249, 249, 0.7);
-  display: flex; }
+  background-color: rgba(247, 249, 249, 0.7); }
+
+.medium {
+  max-height: 100%;
+  max-width: 100%; }
+
+.underline {
+  margin: auto;
+  border-bottom: #2081C3 1px solid;
+  width: 50%;
+  display: flex;
+  justify-content: center; }
+  .underline h2 {
+    font-size: 2.5rem; }
 
 h1 {
   font-size: 2.7rem;
   margin: 0 auto; }
+
+h2 {
+  font-size: 2.4rem;
+  margin: 0 auto; }
+
+h3 {
+  font-size: 2rem;
+  margin: 0 auto; }
+
+.no-object {
+  color: #721c24;
+  text-transform: uppercase;
+  font-weight: bold; }
 
 .profile-photo {
   height: 200px;
@@ -121,52 +209,64 @@ h1 {
   display: flex;
   align-items: center; }
 
-.signup, .login {
+.left {
+  text-align: left; }
+
+.list {
+  border-top: black 1px solid;
+  border-bottom: black 1px solid; }
+
+.comments {
+  color: #F7F9F9;
+  background: #0A2C42; }
+  .comments p {
+    text-align: justify; }
+
+.white-bg {
+  background: #F7F9F9;
+  color: #0A2C42; }
+
+.signup, .login, .user, .comic-lists, .create-list, .comic-list, .add, .comics, .create-review, .reviews, .my-reviews, .com-rev, .comments {
   text-align: center;
   width: 100%;
   font-size: 1.5rem; }
-  .signup .underline, .login .underline {
-    margin: auto;
-    border-bottom: #2081C3 1px solid;
-    width: 50%;
-    display: flex;
-    justify-content: center; }
-    .signup .underline h2, .login .underline h2 {
-      font-size: 2.5rem; }
-  .signup .col-sm-6, .login .col-sm-6 {
+  .signup .col-sm-6, .login .col-sm-6, .user .col-sm-6, .comic-lists .col-sm-6, .create-list .col-sm-6, .comic-list .col-sm-6, .add .col-sm-6, .comics .col-sm-6, .create-review .col-sm-6, .reviews .col-sm-6, .my-reviews .col-sm-6, .com-rev .col-sm-6, .comments .col-sm-6 {
     padding: 5px 0; }
-  .signup .col-md-8, .login .col-md-8 {
+  .signup .col-md-8, .login .col-md-8, .user .col-md-8, .comic-lists .col-md-8, .create-list .col-md-8, .comic-list .col-md-8, .add .col-md-8, .comics .col-md-8, .create-review .col-md-8, .reviews .col-md-8, .my-reviews .col-md-8, .com-rev .col-md-8, .comments .col-md-8 {
     margin-bottom: 10px; }
-  .signup label, .signup p , .login label, .login p  {
+  .signup label, .signup p , .login label, .login p , .user label, .user p , .comic-lists label, .comic-lists p , .create-list label, .create-list p , .comic-list label, .comic-list p , .add label, .add p , .comics label, .comics p , .create-review label, .create-review p , .reviews label, .reviews p , .my-reviews label, .my-reviews p , .com-rev label, .com-rev p , .comments label, .comments p  {
     margin-bottom: 0; }
-  .signup label, .login label {
+  .signup label, .login label, .user label, .comic-lists label, .create-list label, .comic-list label, .add label, .comics label, .create-review label, .reviews label, .my-reviews label, .com-rev label, .comments label {
     display: inline-flex;
     vertical-align: sub;
     text-transform: uppercase; }
-  .signup input, .signup textarea, .login input, .login textarea {
+  .signup input, .signup textarea, .login input, .login textarea, .user input, .user textarea, .comic-lists input, .comic-lists textarea, .create-list input, .create-list textarea, .comic-list input, .comic-list textarea, .add input, .add textarea, .comics input, .comics textarea, .create-review input, .create-review textarea, .reviews input, .reviews textarea, .my-reviews input, .my-reviews textarea, .com-rev input, .com-rev textarea, .comments input, .comments textarea {
     -webkit-appearance: textfield;
     width: 90%; }
-  .signup textarea, .login textarea {
+  .signup textarea, .login textarea, .user textarea, .comic-lists textarea, .create-list textarea, .comic-list textarea, .add textarea, .comics textarea, .create-review textarea, .reviews textarea, .my-reviews textarea, .com-rev textarea, .comments textarea {
     border: transparent; }
-  .signup .btn, .login .btn {
-    font-size: 1.5rem;
-    margin: 10px; }
-  .signup .photo, .login .photo {
+  .signup .photo, .login .photo, .user .photo, .comic-lists .photo, .create-list .photo, .comic-list .photo, .add .photo, .comics .photo, .create-review .photo, .reviews .photo, .my-reviews .photo, .com-rev .photo, .comments .photo {
     display: flex;
     justify-content: center; }
-  .signup .login-adv, .signup .signup-adv, .login .login-adv, .login .signup-adv {
+  .signup .login-adv, .signup .signup-adv, .login .login-adv, .login .signup-adv, .user .login-adv, .user .signup-adv, .comic-lists .login-adv, .comic-lists .signup-adv, .create-list .login-adv, .create-list .signup-adv, .comic-list .login-adv, .comic-list .signup-adv, .add .login-adv, .add .signup-adv, .comics .login-adv, .comics .signup-adv, .create-review .login-adv, .create-review .signup-adv, .reviews .login-adv, .reviews .signup-adv, .my-reviews .login-adv, .my-reviews .signup-adv, .com-rev .login-adv, .com-rev .signup-adv, .comments .login-adv, .comments .signup-adv {
     color: #F7F9F9;
     background: rgba(10, 44, 66, 0.9);
     border-radius: .25rem; }
-    .signup .login-adv p, .signup .signup-adv p, .login .login-adv p, .login .signup-adv p {
+    .signup .login-adv p, .signup .signup-adv p, .login .login-adv p, .login .signup-adv p, .user .login-adv p, .user .signup-adv p, .comic-lists .login-adv p, .comic-lists .signup-adv p, .create-list .login-adv p, .create-list .signup-adv p, .comic-list .login-adv p, .comic-list .signup-adv p, .add .login-adv p, .add .signup-adv p, .comics .login-adv p, .comics .signup-adv p, .create-review .login-adv p, .create-review .signup-adv p, .reviews .login-adv p, .reviews .signup-adv p, .my-reviews .login-adv p, .my-reviews .signup-adv p, .com-rev .login-adv p, .com-rev .signup-adv p, .comments .login-adv p, .comments .signup-adv p {
       margin-bottom: 0; }
-  .signup .center, .login .center {
+  .signup .center, .login .center, .user .center, .comic-lists .center, .create-list .center, .comic-list .center, .add .center, .comics .center, .create-review .center, .reviews .center, .my-reviews .center, .com-rev .center, .comments .center {
     margin: auto; }
-  .signup .alert-danger, .login .alert-danger {
+  .signup .alert-danger, .login .alert-danger, .user .alert-danger, .comic-lists .alert-danger, .create-list .alert-danger, .comic-list .alert-danger, .add .alert-danger, .comics .alert-danger, .create-review .alert-danger, .reviews .alert-danger, .my-reviews .alert-danger, .com-rev .alert-danger, .comments .alert-danger {
     color: #f5c6cb;
     background-color: #721c24;
     border-color: #f5c6cb;
     margin-top: 10px; }
+
+.list-name {
+  margin: 1px; }
+  .list-name h3 {
+    text-transform: uppercase;
+    font-weight: bold; }
 
 footer {
   background: #0A2C42 url("http://res.cloudinary.com/jmbarcelo/image/upload/q_auto:low/v1524780225/collage-bn.jpg") center/contain;

@@ -37,7 +37,6 @@ authRoutes.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
   const password = req.body.password;
   const aboutme = req.body.aboutme;
   const { url, secure_url } = req.file;
-  console.log(req.file);
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate nickname and password" });
     return;

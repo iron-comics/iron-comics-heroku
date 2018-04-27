@@ -15,6 +15,11 @@ a {
   }
 }
 
+p {
+  text-align: justify;
+  margin: 10px auto;
+}
+
 ul {
   margin-bottom: 0;
 }
@@ -30,7 +35,7 @@ img {
 
 .btn-light {
   background: #2081C3;
-  border-color: #2081C3;
+  border-color: #F7F9F9;
   &:hover {
     background: #0A2C42;
     color: #2081C3;
@@ -39,9 +44,11 @@ img {
 .btn-dark {
   color: #2081C3;
   background: #0A2C42;
+  border: #F7F9F9 1px solid;
   &:hover {
     background: #2081C3;
     color: #0A2C42;
+    border: #F7F9F9 1px solid;
   }
 }
 .btn-white {
@@ -51,4 +58,18 @@ img {
     background: #F7F9F9;
     color: #2081C3;
   }
+}
+
+.btn-red {
+  color: #f5c6cb;
+  background: #721c24;
+  &:hover {
+    background: #f5c6cb;
+    color: #721c24;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  margin: 10px;
 }

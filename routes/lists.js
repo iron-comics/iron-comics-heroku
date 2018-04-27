@@ -12,7 +12,7 @@ listsRoutes.get("/", (req, res) => {
     .populate("id_comic", "title img_icon")  
     .then( list => {
       for (let i = 0; i < list.length; i++) {
-        list[i].id_comic.splice(5, list[0].id_comic.length)     
+        list[i].id_comic.splice(4, list[0].id_comic.length)     
       }
       res.render("lists/comic_lists", {list})
     });

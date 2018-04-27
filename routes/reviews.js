@@ -20,9 +20,9 @@ reviewRoutes.get("/review", (req, res) => {
       Comment.find({ id_review: id })
         .populate("id_review")
         .populate("id_user")
-        .then(commets => {
+        .then(comments => {
           console.log(review);
-          res.render("reviews/comments", { review, commets });
+          res.render("reviews/comments", { review, comments });
         });
     });
 });

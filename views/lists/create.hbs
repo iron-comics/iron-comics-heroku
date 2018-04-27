@@ -1,5 +1,21 @@
-<form action="/lists/create" method="post">
-<label for="">Name list</label>
-<input type="text" name="name">
-<button>Add list</button>
-</form>
+<div class="create-list">
+  <div class="row">
+    <div class="underline">
+      <h2>Create comic list</h2>
+    </div>
+  </div>
+  <form class="row" action="/lists/create" method="post">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="">List name:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <input type="text" name="name">
+    </div>
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-dark">Add list</button>
+    </div>
+    <div class="col-sm-6">
+        <a href="/lists" class="btn btn-light" role="button">Back to lists</a>
+    </div>
+  </form>
+</div>

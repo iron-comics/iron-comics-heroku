@@ -1,12 +1,37 @@
-<a href="/reviews/create">Create review</a>
-<a href="/reviews/myreviews">My reviews</a>
+<div class="row">
+    <div class="col-sm-12 underline">
+        <h2>Reviews</h2>
+    </div>
+</div>
+<div class="row reviews">
+    <div class="col-sm-4">
+        <a href="/reviews/create" class="btn btn-dark" role="button">Create new review</a>
+    </div>
+    <div class="col-sm-4">
+        <a href="/reviews/myreviews" class="btn btn-light" role="button">My reviews</a>
+    </div>
+    <div class="col-sm-4">
+        <a href="/private/user" class="btn btn-red" role="button">Back to profile</a>
+    </div>
+</div>
 {{#if review}}
     {{#each review}}
-        <p>{{this.author}}</p>
-        <p>{{this.rating}}</p>
-        <p>{{this.id_comic.title}}</p>
-        <img src="{{this.id_comic.img_icon}}" alt="">
-        <p>{{this.reviewtext}}</p>
-        <a href="/reviews/review?id={{this.id}}">Review</a>
+    <div class="row reviews">
+        <div class="col-sm-3">
+            <img src="{{this.id_comic.img_icon}}" alt="">
+        </div>
+        <div class="col-sm-9 left">
+            <h3>{{this.id_comic.title}} {{this.rating}}</h3>
+            <h4>Author: {{this.author}}</h4>
+            <p>{{this.reviewtext}}</p>
+        </div>
+    </div>
+    <div class="row reviews">
+        <div class="col-sm-12">
+            <a href="/reviews/review?id={{this.id}}" class="btn btn-dark" role="button">Go to review</a>
+        </div>
+    </div>
     {{/each}}
+{{else}}
+<h4 class="no-object">No reviews created</h4>
 {{/if}}

@@ -1,10 +1,19 @@
-
-<p>{{comic.title}}</p>
-
-<form action="/comments/edit?id={{comment.id}}&id_review={{comment.id_review.id}}" method="post">
-
-    <label for="">text</label>
+<div class="row">
+    <div class="col-sm-12 underline">
+        <h2>{{comic.title}}</h2>
+    </div>
+</div>
+<form class="row com-rev" action="/comments/edit?id={{comment.id}}&id_review={{comment.id_review.id}}" method="post">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+    <label for="text">Comment:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
     <input type="text" name="text" value={{comment.text}}>
-    <button>Edit</button>
+    </div>
+    <div class="col-sm-6">
+    <button type="submit" class="btn btn-dark">Edit</button>
+    </div>
+    <div class="col-sm-6">
+        <a href="/comments" class="btn btn-light" role="button">Back to comments</a>
+    </div>
 </form>
-<a href="/comments">Return</a>

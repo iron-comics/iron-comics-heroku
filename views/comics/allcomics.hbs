@@ -1,19 +1,31 @@
+<div class="add">
+  <div class="row">
+    <div class="underline">
+      <h2>Add Comic</h2>
+    </div>
+  </div>
+  <form class="row" action="/comics/comic?id={{idList}}" method="POST" id="form-container">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="name">Name:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <input id="name" type="text" name="name">
+    </div>
 
-<form action="/comics/comic?id={{idList}}" method="POST" id="form-container">
-  <label for="name">Name</label>
-  <input id="name" type="text" name="name">
-
-  <br><br>
-
-  <label for="issue_number">Issue Number</label>
-  <input id="issue_number" type="text" name="issue">
-  <br>
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br><br>
-
-  <button>Search</button>
-
-</form>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="issue_number">Issue Number:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <input id="issue_number" type="text" name="issue">
+    </div>
+    {{#if message }}
+      <div class="error-message">{{ message }}</div>
+    {{/if}}
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-dark">Search</button>
+    </div>
+    <div class="col-sm-6">
+        <a class="btn btn-light" href="/lists/list?id={{idList}}"><h4>Back to list</h4></a>
+    </div>
+  </form>
+</div>

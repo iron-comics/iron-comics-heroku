@@ -1,6 +1,18 @@
-{{#each pepe}}
-    <p>{{this.name}}</p>
-    <img src={{this.image.icon_url}} alt="">
-    <a href="/comics/add?id={{this.id}}&name={{../idList}}">Add</a>
+ {{#each pepe}}
+<div class="row comics">
+    <div class="col-sm-3">
+        <img src={{this.image.icon_url}} alt="{{this.name}} icon">
+    </div>
+    <div class="col-sm-6 left">
+        <h4>{{this.name}}</h4>
+    </div>
+    <div class="col-sm-3">
+        <a class="btn btn-light" href="/comics/add?id={{this.id}}&name={{../idList}}">Add</a>
+    </div>
+</div>
 {{/each}}
-<a href="/comics/all?id={{idList}}">Return</a>
+<div class="row comics">
+    <div class="col-sm-12">
+        <a class="btn btn-dark" href="/comics/all?id={{idList}}">Back</a>
+    </div>
+</div>

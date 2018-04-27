@@ -14,8 +14,8 @@ commentsRoutes.get("/", (req, res) => {
     });
 });
 commentsRoutes.get("/edit", (req, res) => {
-  const id_commet = req.query.id;
-  Comment.findById(id_commet)
+  const id_comment = req.query.id;
+  Comment.findById(id_comment)
     .populate("id_review", "author id_comic")
     .then(comment =>
       Comic.findById(comment.id_review.id_comic).then(comic =>
@@ -25,17 +25,17 @@ commentsRoutes.get("/edit", (req, res) => {
 });
 commentsRoutes.post("/edit", (req, res) => {
   const text = req.body.text;
-  const id_commet = req.query.id;
+  const id_comment = req.query.id;
   const id_user = req.user.id;
   const id_review = req.query.id_review;
   const update = {text, id_user, id_review}
-  console.log(text + " " + id_user + " " + id_review + " " + id_commet)
-  Comment.findByIdAndUpdate(id_commet, {text, id_user, id_review}).then(() =>
+  console.log(text + " " + id_user + " " + id_review + " " + id_comment)
+  Comment.findByIdAndUpdate(id_comment, {text, id_user, id_review}).then(() =>
     res.redirect("/comments")
   );
 });
 commentsRoutes.get("/remove", (req, res) => {
-  const id_commet = req.query.id;
-  Comment.findByIdAndRemove(id_commet).then(() => res.redirect("/comments"));
+  const id_comment = req.query.id;
+  Comment.findByIdAndRemove(id_comment).then(() => res.redirect("/comments"));
 });
 module.exports = commentsRoutes;

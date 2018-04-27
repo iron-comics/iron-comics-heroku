@@ -1,21 +1,41 @@
-<h2>{{review.id_comic.title}}</h2>
+<div class="row">
+    <div class="col-sm-12 underline">
+        <h2>{{review.id_comic.title}}</h2>
+    </div>
+</div>
 
-<p>{{review.author}}</p>
-<img src="{{review.id_comic.img_icon}}" alt="">
-
-<p>{{review.reviewtext}}</p>
-
-{{#if commets}}
-    {{#each commets}}
-        <div>
-            <p>Name: {{this.id_user.username}}</p>
+<div class="row reviews">
+        <div class="col-sm-3">
+            <img src="{{review.id_comic.img_icon}}" alt="">
+        </div>
+        <div class="col-sm-9 left">
+            <h4>Author: {{review.author}}</h4>
+            <p>{{review.reviewtext}}</p>
+        </div>
+    </div>
+{{#if comments}}
+    {{#each comments}}
+    <div class="row comments">
+        <div class="col-sm-12">
+            <h4>Name: {{this.id_user.username}}</h4>
             <p>{{this.text}}</p>
         </div>
+    </div>
     {{/each}}
 {{/if}}
-
-<form action="/reviews/review?id={{review.id}}" method="post">
-<label for="">Text</label>
+<div class="com-rev">
+<form class="row" action="/reviews/review?id={{review.id}}" method="post">
+<div class="col-lg-3 col-md-4 col-sm-6">
+<label for="">Comment:</label>
+</div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
 <input type="text" name="text">
-<button>Comment</button>
+</div>
+<div class="col-sm-6">
+      <button type="submit" class="btn btn-dark">Comment</button>
+    </div>
+    <div class="col-sm-6">
+        <a href="/reviews" class="btn btn-light" role="button">Back to reviews</a>
+    </div>
 </form>
+</div>

@@ -1,14 +1,34 @@
-
-{{#if comments}}
-    {{#each comments}}
-        <p>{{this.id_review.author}} --> Nota para Lolo: Este es el autor</p>
-        <p>{{this.id_review.reviewtext}} --> Nota para Lolo: Este es el contenido de la review</p>
-        <br>
-        <p>{{this.text}} --> Nota para Lolo: Este es el comentario</p>
-        <a href="/comments/edit?id={{this.id}}">Edit</a>
-        <a href="/comments/remove?id={{this.id}}">Delete</a>
-        <br>
-    {{/each}}
-{{else}}
-    <p>NO COMMENTS</p>
+<div class="row comic-list underline">
+    <div class="col-sm-12">
+        <h2>My comments</h2>
+    </div>
+</div>
+{{#if comments}} {{#each comments}}
+<div class="comments">
+<div class="row">
+    <div class="col-sm-12">
+        <p>Author: {{this.id_review.author}}</p>
+    </div>
+</div>
+<div class="row white-bg">
+    <div class="col-sm-12">
+        <p>Review: {{this.id_review.reviewtext}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <p>Comment: {{this.text}}</p>
+    </div>
+</div>
+</div>
+<div class="row comic-list">
+    <div class="col-sm-6">
+        <a class="btn btn-dark" href="/comments/edit?id={{this.id}}" class="btn" role="button">Edit</a>
+    </div>
+    <div class="col-sm-6">
+        <a class="btn btn-red" href="/comments/remove?id={{this.id}}" onclick="return confirm('Delete {{list.name}} from BD?')">Delete Comment</a>
+    </div>
+</div>
+{{/each}} {{else}}
+<h4 class="no-object">Empty comments list</h4>
 {{/if}}

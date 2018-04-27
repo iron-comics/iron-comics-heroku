@@ -1,27 +1,38 @@
-<form action="/reviews/create" method="post">
-<label for="">Text</label>
-<input type="text" name="text" id="">
-<label for="">Comic</label>
-<select name="name">
-  <option value="" selected="selected">- selected -</option>
-    {{#each listTitle}}
-  <option value="{{this.id}}">{{this.title}}</option>
-  ¡ {{/each}}
-</select>
-<label for="">Valoración</label>
-<input type="range" name="value" value="">
-{{!-- <datalist id="tickmarks">
-  <option value="0" label="0%">
-  <option value="10">
-  <option value="20">
-  <option value="30">
-  <option value="40">
-  <option value="50" label="50%">
-  <option value="60">
-  <option value="70">
-  <option value="80">
-  <option value="90">
-  <option value="100" label="100%">
-</datalist> --}}
-<button>GO!</button>
-</form>
+<div class="create-review">
+  <div class="row">
+    <div class="col-sm-12 underline">
+      <h2>Create review</h2>
+    </div>
+  </div>
+  <form class="row" action="/reviews/create" method="post">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="text">Review:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <textarea name="text" cols="40" rows="5"></textarea>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="">Comic:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <select name="name">
+        <option value="" selected="selected">- SELECT -</option>
+        {{#each listTitle}}
+        <option value="{{this.id}}">{{this.title}}</option>
+        ¡ {{/each}}
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <label for="">Rating:</label>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6">
+      <input type="range" name="value" min="0" max="100" value="">
+    </div>
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-dark">Create review</button>
+    </div>
+    <div class="col-sm-6">
+        <a href="/reviews" class="btn btn-light" role="button">Back to reviews</a>
+    </div>
+  </form>
+</div>

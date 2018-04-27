@@ -1,19 +1,44 @@
-<a href="/lists/create" class="btn" role="button">Create new list</a>
+<div class="row">
+    <div class="col-sm-12 underline">
+        <h2>My comic lists</h2>
+    </div>
+</div>
+<div class="row comic-lists">
+    <div class="col-sm-6">
+        <a href="/lists/create" class="btn btn-dark" role="button">Create new list</a>
+    </div>
+    <div class="col-sm-6">
+        <a href="/private/user" class="btn btn-light" role="button">Back to profile</a>
+    </div>
+</div>
 {{#if list}}
-    <ul>        
-        {{#each list}} 
-            <li><a href="lists/list?id={{this.id}}">{{this.name}}</a></li>
-            <a href="/comics/delete/list?idList={{this.id}}" onclick="return confirm('Delete {{this.name}} from BD?')">Delete List</a>
-            <ul>
-                {{#each this.id_comic}}
-                    <li>{{this.title}}</li>
-                    <img src="{{this.img_icon}}" alt="">
-                {{else}}
-                    <p>Empty list</p>
-                {{/each}}
-            </ul>
-        {{/each}}
-    </ul>
+<div class="list">
+    {{#each list}}
+    <div class="row">
+        <div class="col-sm-9">
+            <a class="list-name" href="lists/list?id={{this.id}}">
+                <h3>{{this.name}}</h3>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a class="btn btn-red" href="/comics/delete/list?idList={{this.id}}" onclick="return confirm('Delete {{this.name}} from BD?')">Delete List</a>
+        </div>
+    </div>
+    {{#each this.id_comic}}
+    <div class="row comic-lists">
+        <div class="col-md-2">
+            <img src="{{this.img_icon}}" alt="{{this.title}} image">
+        </div>
+        <div class="col-sm-10 left">
+            <h4>{{this.title}}</h4>
+        </div>
+    </div>
+    {{else}}
+    <h4 class="no-object">Empty list</h4>
+    {{/each}}
+</div>
+{{/each}}
+</div>
 {{else}}
-    <h2>No list created</h2>
+<h4 class="no-object">No lists created</h4>
 {{/if}}

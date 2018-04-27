@@ -1,6 +1,21 @@
 {{#if comic}}
-<p>{{comic.title}}</p>
-<img src={{comic.img_medium}} alt="">
+<div class="row comics">
+  <div class="col-sm-12">
+    <div class="title">
+      <h2>{{comic.title}}</h2>
+    </div>
+  </div>
+</div>
+<div class="row comics">
+  <div class="col-sm-12">
+    <img src={{comic.img_medium}} alt="">
+  </div>
+</div>
 {{else}}
-<p>No description</p>
+<h4 class="no-object">No description</h4>
 {{/if}}
+<div class="row">
+  <div class="col-sm-12 comic-list">
+    <a href="/lists" class="btn btn-light" role="button">Back to my lists</a>
+  </div>
+</div>
