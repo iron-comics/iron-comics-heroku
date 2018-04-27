@@ -42,7 +42,9 @@ comicsRoutes.get("/add", (req, res, next) => {
           });
         }
       });
-    });
+    }).catch(() => {
+      res.redirect("/lists/list")
+    })
   const search_list = (idList, id_comic, datacomic) => {
     List.findOne({ _id: idList }, (err, l) => {
       if (l !== null) {
@@ -58,7 +60,8 @@ comicsRoutes.get("/add", (req, res, next) => {
       } else {
         res.redirect("lists/list");
       }
-    });
+    })
+    .catch(() => {res.redirect("/lists/list"); return;})
   };
 });
 
